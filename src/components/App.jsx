@@ -7,20 +7,18 @@ function App() {
   });
 
   function handleChange(event) {
-    const newValue = event.target.value;
-    const inputName = event.target.name;
-
+    const { value, name } = event.target;
     // change state function
     changeName((prevValue) => {
-      if (inputName === "fName") {
+      if (name === "fName") {
         return {
-          fName: newValue,
+          fName: value,
           lName: prevValue.lName
         };
       } else {
         return {
           fName: prevValue.fName,
-          lName: newValue
+          lName: value
         };
       }
     });
